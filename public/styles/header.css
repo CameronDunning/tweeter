@@ -1,0 +1,16 @@
+header {
+  height: 330px;
+  width: 100%;
+  position: relative;
+  top: 120px;
+  background-image: url("../images/header-background.png");
+}
+
+header div {
+  padding-top: 10px;
+  text-align: center;
+}
+
+header h2 {
+  margin: 0;
+}
