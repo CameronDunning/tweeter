@@ -11,6 +11,10 @@
   box-shadow: 3px 3px 4px #888888;
 }
 
+.tweets:hover header .handle {
+  visibility: visible;
+}
+
 .tweets header {
   margin: 10px;
   color: lightgrey;
@@ -19,6 +23,7 @@
 .tweets header .handle {
   float: right;
   padding-right: 10px;
+  visibility: hidden;
 }
 
 .tweets .body {
