@@ -1,4 +1,4 @@
-.tweets {
+#tweets article {
   margin: 8px 0;
   padding: 5px;
   border: solid;
@@ -7,33 +7,44 @@
   border-radius: 10px;
 }
 
-.tweets:hover {
+#tweets > article:hover {
   box-shadow: 3px 3px 4px #888888;
 }
 
-.tweets:hover header .handle {
+#tweets > article:hover .handle {
   visibility: visible;
 }
 
-.tweets header {
-  margin: 10px;
+#tweets header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px;
   color: lightgrey;
 }
 
-.tweets header .handle {
-  float: right;
+#tweets .left {
+  display: flex;
+  align-items: center;
+}
+
+#tweets .name {
+  margin-left: 10px;
+}
+
+#tweets .handle {
   padding-right: 10px;
   visibility: hidden;
 }
 
-.tweets .body {
+#tweets .body {
   width: 100%;
   padding: 10px;
   border-bottom: solid;
   border-color: grey;
 }
 
-.tweets footer span {
+#tweets footer span {
   font-size: 12px;
   padding-left: 15px;
   position: relative;

@@ -21,6 +21,7 @@ form textarea {
   border: none;
   border-bottom: solid;
   background-color: #f4f1ec;
+  outline: none;
 }
 
 form input {
