@@ -1,13 +1,15 @@
 $(document).ready(function() {
-  $("textarea", ".new-tweet").on("keydown", function() {
-    let tweetLength = this.value.length;
+  $("textarea", ".new-tweet").on("keyup", function() {
+    let tweetLength = $(this).val().length;
     let remainingChars = 140 - tweetLength;
     let counter = $(this)
-      .next()
-      .next();
+      .parent()
+      .find("span.counter");
     counter.html(remainingChars);
     if (remainingChars < 0) {
       counter.css({ color: "red" });
+    } else {
+      counter.css({ color: "" });
     }
   });
 });

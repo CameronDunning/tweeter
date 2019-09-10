@@ -1,4 +1,4 @@
-header {
+.main-header {
   height: 330px;
   width: 100%;
   position: relative;
@@ -6,11 +6,11 @@ header {
   background-image: url("../images/header-background.png");
 }
 
-header div {
+.main-header div {
   padding-top: 10px;
   text-align: center;
 }
 
-header h2 {
+.main-header h2 {
   margin: 0;
 }
