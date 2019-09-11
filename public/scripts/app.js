@@ -61,26 +61,34 @@ const createTweetElement = tweetObject => {
   return $(tweet);
 };
 
-const loadTweets = () => {
-  console.log("load tweets");
+const isValidTweet = tweet => {
+  return tweet.length !== 0 && tweet !== null && tweet.length < 140;
 };
-
-$(function() {
-  renderTweets(tweetData);
-});
 
 $(function() {
   const $form = $("#new-tweet-form");
   $form.submit(function(event) {
     event.preventDefault();
-    const tweetBody = $form.serialize();
-    console.log("event prevented");
-    console.log(tweetBody);
-    $.ajax({
-      method: "POST",
-      url: "/tweets/",
-      data: tweetBody
-    });
-    // $.ajax(`/tweets/${tweetBody}`, { method: "POST" });
+    if (isValidTweet($("textarea").val())) {
+      const tweetBody = $form.serialize();
+      $.ajax({
+        method: "POST",
+        url: "/tweets/",
+        data: tweetBody
+      }).then(loadTweets);
+    } else {
+      alert("Invalid Input!");
+    }
   });
+});
+
+const loadTweets = () => {
+  $("#tweets").empty();
+  $.get("/tweets/", function(data) {
+    renderTweets(data);
+  });
+};
+
+$(function() {
+  renderTweets(tweetData);
 });
