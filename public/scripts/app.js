@@ -83,9 +83,9 @@ $(function() {
         data: tweetBody
       }).then(loadTweets);
     } else {
-      $("#invalid-input").slideToggle(1000);
+      $("#invalid-input").slideToggle(400);
       setTimeout(() => {
-        $("#invalid-input").slideToggle(1000);
+        $("#invalid-input").slideToggle(400);
       }, 2000);
     }
   });
