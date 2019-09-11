@@ -14,10 +14,12 @@ nav #logo {
   font-size: 1.5em;
 }
 
-nav a {
+#scroll-link {
   position: fixed;
   right: 40px;
+  top: 1.4em;
+  height: 60px;
   color: #f4f1ec;
   font-size: 1em;
-  text-decoration: none;
+  text-align: center;
 }

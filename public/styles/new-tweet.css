@@ -1,4 +1,4 @@
-.new-tweet {
+.new-tweet form {
   padding: 5px;
   border: solid;
   border-width: 2px;
@@ -6,7 +6,7 @@
   border-radius: 10px;
 }
 
-.new-tweet:hover {
+.new-tweet form:hover {
   box-shadow: 3px 3px 4px #888888;
 }
 
@@ -37,5 +37,21 @@ form input {
   font-family: "Bungee", cursive;
   float: right;
   padding: 5px;
-  margin: 5px;
+  margin: 8px;
+}
+
+#invalid-input {
+  border: solid;
+  border-width: 2px;
+  border-color: grey;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  background-color: #e6a890;
+  display: none;
+}
+
+#invalid-input p {
+  margin: 5px auto;
 }

@@ -29,6 +29,12 @@ const tweetData = [
   }
 ];
 
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweets = data => {
   for (let elem of data) {
     let $tweet = createTweetElement(elem);
@@ -49,7 +55,7 @@ const createTweetElement = tweetObject => {
       </div>
     </header>
     <main>
-      <div class="body">${tweetObject.content.text}</div>
+      <div class="body">${escape(tweetObject.content.text)}</div>
     </main>
     <footer>
       <span class="date-created">${Math.round(
@@ -77,7 +83,10 @@ $(function() {
         data: tweetBody
       }).then(loadTweets);
     } else {
-      alert("Invalid Input!");
+      $("#invalid-input").slideToggle(1000);
+      setTimeout(() => {
+        $("#invalid-input").slideToggle(1000);
+      }, 2000);
     }
   });
 });
@@ -91,4 +100,12 @@ const loadTweets = () => {
 
 $(function() {
   renderTweets(tweetData);
+});
+
+$(function() {
+  $("#scroll-link").on("click", () => {
+    console.log("clicked new-tweet-link");
+    $(".new-tweet").slideToggle();
+    $("#new-tweet-form, textarea").focus();
+  });
 });
