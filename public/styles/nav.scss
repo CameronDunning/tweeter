@@ -6,11 +6,12 @@ nav {
   background-color: #4056a1;
   padding: 1.5em;
   z-index: 10;
-}
-nav #logo {
-  font-family: "Bungee", cursive;
-  color: #f4f1ec;
-  font-size: 1.5em;
+
+  #logo {
+    font-family: "Bungee", cursive;
+    color: #f4f1ec;
+    font-size: 1.5em;
+  }
 }
 
 #scroll-link {
@@ -22,5 +23,3 @@ nav #logo {
   font-size: 1em;
   text-align: center;
 }
-
-/*# sourceMappingURL=nav.css.map */

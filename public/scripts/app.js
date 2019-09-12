@@ -38,7 +38,7 @@ const escape = function(str) {
 const renderTweets = data => {
   for (let elem of data) {
     let $tweet = createTweetElement(elem);
-    $("#tweets").append($tweet);
+    $("#tweets").prepend($tweet);
   }
 };
 
@@ -82,6 +82,7 @@ $(function() {
         url: "/tweets/",
         data: tweetBody
       }).then(loadTweets);
+      $("textarea").val("");
     } else {
       $("#invalid-input").slideToggle(400);
       setTimeout(() => {
@@ -104,8 +105,11 @@ $(function() {
 
 $(function() {
   $("#scroll-link").on("click", () => {
-    console.log("clicked new-tweet-link");
     $(".new-tweet").slideToggle();
     $("#new-tweet-form, textarea").focus();
   });
+});
+
+$(function() {
+  $(".new-tweet").slideToggle(0);
 });

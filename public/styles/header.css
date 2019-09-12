@@ -2,7 +2,7 @@
   height: 330px;
   width: 100%;
   position: relative;
-  top: 120px;
+  background-color: orange;
   background-image: url("../images/header-background.png");
 }
 
