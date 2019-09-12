@@ -6,8 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Project
 
-!["Full Screen Page"]()
-!["Smaller Screen Page"]()
+!["Full Screen Page"](https://github.com/CameronDunning/tweeter/blob/master/public/images/Full-screen.png)
+!["Smaller Screen Page"](https://github.com/CameronDunning/tweeter/blob/master/public/images/small-screen.png)
 
 ## Getting Started
 
