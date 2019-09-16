@@ -40,7 +40,6 @@
 }
 
 #tweets .body {
-  float: left;
   overflow-wrap: break-word;
   width: 100%;
   padding: 10px;
