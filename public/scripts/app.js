@@ -36,6 +36,7 @@ const escape = function(str) {
 };
 
 const renderTweets = data => {
+  $("#tweets").empty();
   for (let elem of data) {
     let $tweet = createTweetElement(elem);
     $("#tweets").prepend($tweet);
@@ -68,7 +69,7 @@ const createTweetElement = tweetObject => {
 };
 
 const isValidTweet = tweet => {
-  return tweet.length !== 0 && tweet !== null && tweet.length < 140;
+  return tweet.length !== 0 && tweet !== null && tweet.length <= 140;
 };
 
 $(function() {
@@ -84,32 +85,26 @@ $(function() {
       }).then(loadTweets);
       $("textarea").val("");
     } else {
-      $("#invalid-input").slideToggle(400);
+      $("#invalid-input").slideToggle();
       setTimeout(() => {
-        $("#invalid-input").slideToggle(400);
+        $("#invalid-input").slideToggle();
       }, 2000);
     }
   });
 });
 
 const loadTweets = () => {
-  $("#tweets").empty();
   $.get("/tweets/", function(data) {
     renderTweets(data);
   });
 };
 
 $(function() {
-  renderTweets(tweetData);
-});
+  loadTweets();
+  $(".new-tweet").slideToggle(0);
 
-$(function() {
   $("#scroll-link").on("click", () => {
     $(".new-tweet").slideToggle();
     $("#new-tweet-form, textarea").focus();
   });
-});
-
-$(function() {
-  $(".new-tweet").slideToggle(0);
 });
